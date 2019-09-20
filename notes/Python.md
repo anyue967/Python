@@ -1,7 +1,9 @@
 ## 1.注释：  
 + 以 '#'开头，为单行注释；以'''comment'''为多行注释  
+
 ## 2.命名与保留字：
 + 规则：数字、字母、下划线和汉字，区分大小写，首字母非数字，不能为保留字  
+
 ## 3.数据类型：
 + 字符串类型:""或''均可，分为*正向递增序号*与*反向递减序号*；
   - 索引：`<字符串>[M]`，返回字符串中的单个字符  
@@ -9,22 +11,27 @@
 + 数字类型：整数、浮点数
 + 列表类型：[]，采用逗号分隔各元素，['F','f']  
 + eval():去除参数最外侧引号并执行余下语句，eval("1+2") 
+
 ## 4.Turtle库，也是(海龟)啦：
 ### 4.1 绘图窗体：从左上角(0,0)开始:  
     # 设置窗体大小及位置，后两个参数可选
     turtle.setup(width, height, starx, starty)  
+
 ### 4.2 绝对坐标：
 	# 开始海龟在画布中心(0,0)，X轴由右左向，Y轴由下到上
     turtle.goto()
+
 ### 4.3 海龟坐标：
 	turtle.circle(r,angel)
 	turtel.fd(d)	# 前进
 	turtle.bk(d)	# 后退
+
 ### 4.4 turtle角度坐标系：
 	逆正顺负，以前进为标准，逆时针：前-左-后-右，即前的逆时针左，顺时针为右
 	turtle.seth(angle)	# 改变海龟行进角度
 	turtle.left(angle) 	# 朝左改变角度
 	turtle.right(angle)	# 朝右改变角度
+
 ### 4.5 turtle RGB 色彩模式：
 + ### 0~255整数值或者0~1小数值
         White-255,255,255	yellow-255,255,0
@@ -38,13 +45,16 @@
 	turtle.pendown() # 落下画笔，海龟在爬行，turtle.pd()
 	turtle.pensize(width) # 画笔宽度，海龟的腰围，turtle.width(width)
 	turtle.pencolor(color) # 画笔颜色，color-字符串或者RGB
+
 ### 5.2 turtl运动控制函数：
 	turtle.forward(d)	# 走直线，turtle.fd(d)
 	turtle.circle(r, extent=none) # 走曲线，r绘制半径，默认圆心在海龟左侧r距离的位置，决定海龟运动方向，extent绘制角度，默认是360°	
+
 ### 5.3 turtle 方向控制函数(绝对角度+海龟角度)：
 	turtle.setheading(angle)	# 改变海龟行进角度，turtle.seth(angle)
 	turtle.left(angle) 	# 朝左改变角度
 	turtle.right(angle)	# 朝右改变角度
+
 ## 6. 库引用：
 ### 6.1使用方法：
 
@@ -64,6 +74,7 @@
 		<循环执行的语句>							<语句块>
 	range(N)：产生0~(N-1)整数序列，共N个
 	range(M,N)：产生M~(N-M)整数序列，共N-M个
+
 ### 7.2 分支结构：
 	if <条件>：			if<条件>				if<条件1>	
 		<语句块>  			<语句块1>			<语句块1>
@@ -77,6 +88,7 @@
 + x and y --> 逻辑与
 + x or y --> 逻辑或
 + not x --> 逻辑非
+
 ### 7.4 异常处理：
 	try:				try:					try:
 		<语句块1>			<语句块1>				<语句块1>
@@ -86,28 +98,34 @@
 													<语句块3>
 												finally:
 													<语句块4>
+
 ### 7.5 无限循环：
 	while <条件>：
 		<语句块>
 + break:跳出并结束当前整个循环，执行循环后的语句
 + continue:结束当次循环，据需执行后续次数循环
+
 ## 8.基本数据类型：
 ### 8.1整数：
 + 十进制：1010，99，-127
 + 二进制：0b010，-0B101
 + 八进制：0o123，-0O456	
 + 十六进制：0x9a，-0X89
+
 ### 8.2浮点数：
 + 浮点数运算存在不确定尾数
 	round(x,d)：对x四舍五入，d为小数截取位数
 + 使用字母e/E作为幂的符号，以10为基数，4.3e-3，9.6E5 
+
 ### 8.3 复数
 + z = 1.23e-4+5.6e+89j # z.real z.imag
+
 ### 8.4 数字类型及操作：
 + `x+y、x-y、x*y、x/y、x//y(10//3=3)`
 + `+x x自身；-y y的负值；x%y 取余；x**y 幂运算`
 + `x+=y、x-=y、x*=y、x/=y、x//=y、x%=y、x**=y`
 + 整数 ->浮点数 ->复数  
+
 ### 8.4 字符串：
 + 由一对单引号或双引号表示
   - "北京欢迎您！" 或者'C'
@@ -166,14 +184,17 @@
 + time() -- 获取当前时间戳，计算机内部时间值，浮点数
 + ctime() -- 获取当前时间并以易读方式表示，返回字符串
 + gmtime() -- 获取当前时间，表示为计算机可处理的时间格式
+
 ### 9.2 时间格式化函数
 + strftime(tpl, ts) -- tpl是格式化模版字符串，ts是计算机内部时间类型变量
   - eg:`time.strftime("%Y-%m-%d %H-%M-%S", time.gmtime())`
 + strptime(str, tpl) -- str是字符串形式的时间值，tpl是格式化模版字符串，用来定义输入效果
   - eg:`time.strptime('2018-01-26 12:55:20', "%Y-%m-%d %H:%M:%S")`
+
 ### 9.3 程序计时
 + perf_counter() -- 返回CPU级别的时间计数值，由于计数起点不确定，连续调用差值有意义
 + sleep() -- s拟休眠时间，秒/浮点数均可
+
 ## 10. random库
 + seed(a=None) -- 初始化给定的随机数种子，默认当前系统时间
 + random() -- 生成一个[0.0,1.0]之间的随即小数
@@ -184,6 +205,7 @@
 + uniform(a,b) -- 生成一个[a,b]之间的随即小数
 + choice(seq) -- 从序列seq中随即选取一个元素
 + shuffle(seq) -- 将序列seq中元素随即排列，返回打乱后的序列
+
 ###  11.函数
 #### 11.1 函数的定义：
 	def <函数名> (<参数(0个或多个)>):	  def fac(n):				def fac(n):
@@ -191,6 +213,7 @@
 		return <返回值>					 for i in range(1,n+1):			return 1
 											s *= i					else:
 										 return s						return n*fac(n-1)
+
 #### 11.2 局部变量和全局变量：
 + 局部变量和全局变量是不同的变量，函数运行结束后，局部变量被释放
 + global关键字在函数内部声明此变量为全局变量
@@ -256,6 +279,7 @@
   * jieba.lcut(s,cut_all=True) -- 全模式，存在冗余
   * jieba.lcut_for_search(s) -- 存在冗余
   * jieba.add_word(w) -- 向分词词典中增加新词w
+
 ### 15. 文件：
 #### 15.1 文件的打开 -- 操作 -- 关闭
 + file = open(<文件名>,<打开模式>)
@@ -275,7 +299,6 @@
      + <f>.writelines(lines) -- 将元素全为字符串的列表写入文件
 	 + <f>.seek(offset) -- 改变当前文件操作指针的位置，offset:0-文件开头，1-当前位置，2-文件结尾
 
-
 #### 15.2 文件全文本操作：
     fname = input("输入文件名称:")	fname = input("输入文本名称")
 	fo = open(fname, "r")			fo = open(fname,"r")
@@ -290,6 +313,7 @@
     for line in fo.readlines(): 	for line in fo:
     	print(line)						print(line)
     fo.close 						fo.close()	
+
 ### 16.wordcloud库：
 #### 16.1 使用说明：
 + 实例化对象：w = worldcloud.WordCloud() 
