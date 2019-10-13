@@ -14,8 +14,16 @@ Client
 	地址是远程客户端地址，IPv4中是一个二元组(clentaddr, port)
 		接收数据：recv(buffer[, flags]) 使用缓冲区接受数据
 		发送数据：send(bytes)发送数据
-socket.recv(bufsize[,flags])	
+socket.recv(bufsize[,flags])
+
+udp_socket = socket.socket(socket.AF_INET, socket.SOCKET_DGRAM)
+localaddr = ("IP", 7890)
+udp_socket.bind(localaddr)
+udp_socket.sendto("abcd".encode("utf-8"), ("192.168.33.11", 7890))
+udp_socket.recvfrom(1024)
+udp_socket.close()
 '''
+
 FORMAT = "%(asctime)s %(threadName) s %(thread)d %(message)s"
 logging.basicConfig(format=FORMAT, level=logging.INFO)
 

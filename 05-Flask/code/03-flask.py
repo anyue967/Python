@@ -43,11 +43,13 @@ if __name__ = '__main__':
 	ro2 = Role(name='user')
 	db.session.add(ro2)
 	db.session.commit()
-
+	# 生成数据
 	us1 = User(name='wang', email='wang@163.com', password='wang', role_id='ro1_id')
 	us2 = User(name='li', email='li@163.com', password='li', role_id='ro2_id')
 	us3 = User(name='zhao', email='zhao@163.com', password='zhao', role_id='ro2_id')
 	us4 = User(name='zhang', email='zhang@126.com', password='zhang', role_id='ro1_id')
+	# 提交数据给用户会话
 	db.session.add_all([us1, us2, us3, us4])
+	# 提交会话
 	db.session.commit()
 	app.run(debug=True)
